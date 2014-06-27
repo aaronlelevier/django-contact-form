@@ -28,7 +28,7 @@ urlpatterns = patterns('',
 )
 ```
 
-### Add the following to ``settings.py``:
+Add the following to ``settings.py``:
 
 Your Site Name (or COMPANY_NAME as it is called in the settings) will appear in the email
 ```python
