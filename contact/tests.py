@@ -9,10 +9,8 @@ from contact.models import Contact
 
 class FormTests(TestCase):
 
-	fixtures = ['blog.json']
-
 	def setUp(self):
-		self.user = User.objects.create_user('Yuki', 'pyaaron@gmail.com', '1234')
+		self.user = User.objects.create_user('Test User', 'mail@example.com', '1234')
 
 		# TODO: if User is logged in and adding form data based on that, 
 		#	use the above created User to test this
@@ -23,7 +21,7 @@ class FormTests(TestCase):
 
 	def test_contact_form(self):
 		response = self.client.post(reverse('contact:contact'), {'name': 'test',
-						'email': 'pyaaron@gmail.com', 
+						'email': 'mail@example.com', 
 						'subject': 'test email',
 						'message': 'this is a test'}, follow=True)
 		self.assertRedirects(response, '/')
@@ -35,7 +33,7 @@ class FormTests(TestCase):
 		self.assertEqual(len(contacts), 0)
 
 		# process forms that don't work
-		form_data = ['test', 'pyaaron@gmail.com', 'test email', 'this is a test']
+		form_data = ['test', 'mail@example.com', 'test email', 'this is a test']
 		blank = ''
 		index = 0
 		for i in range(3):
@@ -52,15 +50,3 @@ class FormTests(TestCase):
 		# still not Contact Form objects == 0 (none created)
 		contacts = Contact.objects.all()
 		self.assertEqual(len(contacts), 0)
-
-
-
-
-
-
-
-
-
-
-
-
