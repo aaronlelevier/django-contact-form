@@ -23,8 +23,8 @@ class FormTests(TestCase):
 		response = self.client.post(reverse('contact:contact'), {'name': 'test',
 						'email': 'mail@example.com', 
 						'subject': 'test email',
-						'message': 'this is a test'}, follow=True)
-		self.assertRedirects(response, '/')
+						'message': 'this is a test'})
+		self.assertEqual(response.status_code, 302)
 
 	# TODO: add tests for incomplete form / wrong data i.e. bad email address
 	def test_contact_empty_form(self):
