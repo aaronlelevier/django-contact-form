@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row">
+
+	<div class="col-md-12">
+
+		<h1><span class="roboto">Contact Us</span></h1>
+
+		<br>
+
+	<div class="row">
+		<div class="col-lg-offset-1 col-md-8">
+			<p>Please contact us with anything that you'd like to talk about.  Content that you'd like to see, any questions about the progress on the book, or any feedback that you may have from what you have seen so far. Suggestions, whatever you like. We'd love to hear from you!</p>
+		</div>
+	</div>
+
+	<br>
+
+  <!-- Crispy Form -->
+  <div class="row">
+    <div class="col-lg-offset-1 col-md-8">
+      {% crispy form %}
+    </div>
+  </div>
+
+	</div>
+
+</div>
+
+{% endblock content %}

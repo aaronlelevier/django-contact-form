@@ -1,0 +1,10 @@
+*.pyc
+*.swp
+*.pyo
+*.db
+*.jpg
+*.png
+.DS_Store
+.coverage
+/static
+/media
