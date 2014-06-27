@@ -28,19 +28,19 @@ urlpatterns = patterns('',
 )
 ```
 
-Add the following to ``settings.py``:
+### Add the following to ``settings.py``:
 
-* Your Site Name (or COMPANY_NAME as it is called in the settings) will appear in the email
+Your Site Name (or COMPANY_NAME as it is called in the settings) will appear in the email
 ```python
 COMPANY_NAME = "LearnRealSQL"
 ```
 
-* The Contact App uses Bootstrap CSS by default, so **crispy-forms** is set to use this CSS
+The Contact App uses Bootstrap CSS by default, so **crispy-forms** is set to use this CSS
 ```python
 CRISPY_TEMPLATE_PACK = "bootstrap3"
 ```
 
-* Email Settings
+Email Settings
 ```python
 # Any email backend that you want with the following setting
 DEFAULT_FROM_EMAIL = "<email_address_that_your_contact_form_will_send_from"
